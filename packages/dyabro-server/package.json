@@ -1,0 +1,22 @@
+{
+  "name": "@detect-yabro/server",
+  "version": "1.0.0",
+  "description": "Detect Yandex.Browser on server side",
+  "main": "build/index.js",
+  "repository": "https://github.com/opa-oz/detect-yabro",
+  "author": "opa_oz",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.7.5"
+  },
+  "scripts": {
+    "build": "run-s clean build:tsc",
+    "build:tsc": "tsc -b",
+    "clean": "rimraf lib coverage tsconfig.tsbuildinfo"
+  },
+  "dependencies": {
+    "@detect-yabro/common": "^1.0.0"
+  }
+}

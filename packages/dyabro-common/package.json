@@ -1,0 +1,15 @@
+{
+  "name": "@detect-yabro/common",
+  "version": "1.0.0",
+  "description": "Detect Yandex.Browser",
+  "main": "lib/index.js",
+  "repository": "https://github.com/opa-oz/detect-yabro",
+  "author": "opa_oz",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "run-s clean build:tsc",
+    "build:tsc": "tsc -b",
+    "clean": "rimraf lib coverage tsconfig.tsbuildinfo"
+  }
+}
