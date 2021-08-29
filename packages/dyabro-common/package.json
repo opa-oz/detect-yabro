@@ -7,6 +7,9 @@
   "author": "opa_oz",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "run-s clean build:tsc",
     "build:tsc": "tsc -b",
@@ -14,5 +17,5 @@
     "test:jest": "jest",
     "test": "run-s clean build test:jest"
   },
-  "gitHead": "a6a2e9afc241e54ca35351656f6d60eb6d8f6e39"
+  "gitHead": "a91d3918a29383f871680017ab566ab77cb6c9a9"
 }

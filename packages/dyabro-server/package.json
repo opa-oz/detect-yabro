@@ -13,6 +13,9 @@
     "express": "^4.17.1",
     "supertest": "^6.1.6"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "run-s clean build:tsc",
     "build:tsc": "tsc -b",
@@ -23,5 +26,5 @@
   "dependencies": {
     "@detect-yabro/common": "^1.1.0"
   },
-  "gitHead": "a6a2e9afc241e54ca35351656f6d60eb6d8f6e39"
+  "gitHead": "a91d3918a29383f871680017ab566ab77cb6c9a9"
 }
