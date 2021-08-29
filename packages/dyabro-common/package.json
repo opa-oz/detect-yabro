@@ -1,6 +1,6 @@
 {
   "name": "@detect-yabro/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Detect Yandex.Browser",
   "main": "lib/index.js",
   "repository": "https://github.com/opa-oz/detect-yabro",
