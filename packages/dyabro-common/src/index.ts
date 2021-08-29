@@ -72,7 +72,7 @@ export const isLinuxYabro = (userAgent: string): boolean => {
     return checkParams(lowerAgent, { platform: Platforms.LINUX }) && !isMobileYabro(lowerAgent);
 };
 
-type YabroDetectionSummarized = {
+export type YabroDetectionSummarized = {
     isYabro: boolean;
     isMobile: boolean;
     platform?: Platforms;

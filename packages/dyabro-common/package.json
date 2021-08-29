@@ -13,5 +13,6 @@
     "clean": "rimraf lib coverage tsconfig.tsbuildinfo",
     "test:jest": "jest",
     "test": "run-s clean build test:jest"
-  }
+  },
+  "gitHead": "a6a2e9afc241e54ca35351656f6d60eb6d8f6e39"
 }
