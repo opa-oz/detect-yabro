@@ -17,5 +17,5 @@
     "test:jest": "jest",
     "test": "run-s clean build test:jest"
   },
-  "gitHead": "a91d3918a29383f871680017ab566ab77cb6c9a9"
+  "gitHead": "6706eddd46fe9e5ef4585a5017863e2662e4efb7"
 }

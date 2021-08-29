@@ -2,3 +2,4 @@ src
 test
 *.log
 __tests__
+tsconfig.tsbuildinfo
