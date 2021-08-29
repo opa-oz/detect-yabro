@@ -18,5 +18,5 @@ const detectYabro = () => (req: Request, res: Response, next: () => void) => {
     next();
 }
 
-
+export const express = detectYabro;
 export default detectYabro;

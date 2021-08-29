@@ -69,7 +69,7 @@ export const isWindowsYabro = (userAgent: string): boolean => {
 }
 export const isLinuxYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
-    return checkParams(lowerAgent, { platform: Platforms.LINUX });
+    return checkParams(lowerAgent, { platform: Platforms.LINUX }) && !isMobileYabro(lowerAgent);
 }
 
 type YabroDetectionSummarized = {
@@ -99,6 +99,8 @@ export default (userAgent: string): YabroDetectionSummarized => {
         }
     } else if (isIOSYabro(lowerAgent)) {
         platform = Platforms.IOS;
+    } else if (result.isMobile && checkParams(lowerAgent, { platform: Platforms.LINUX })) {
+        platform = Platforms.ANDROID;
     }
 
     if (platform) {

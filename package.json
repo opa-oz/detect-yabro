@@ -13,12 +13,10 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
-  "dependencies": {
-    "global": "^4.4.0"
-  },
+  "dependencies": {},
   "scripts": {
     "build": "lerna run build --npm-client=yarn",
-    "build:package": "tsc -b ./tsconfig.base.json",
+    "test": "lerna run test --npm-client=yarn",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna run --parallel clean",
     "release": "lerna publish"

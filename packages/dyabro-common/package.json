@@ -10,6 +10,8 @@
   "scripts": {
     "build": "run-s clean build:tsc",
     "build:tsc": "tsc -b",
-    "clean": "rimraf lib coverage tsconfig.tsbuildinfo"
+    "clean": "rimraf lib coverage tsconfig.tsbuildinfo",
+    "test:jest": "jest",
+    "test": "run-s clean build test:jest"
   }
 }

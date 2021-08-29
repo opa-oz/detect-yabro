@@ -9,12 +9,16 @@
   "private": false,
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "@types/node": "^16.7.5"
+    "@types/node": "^16.7.5",
+    "express": "^4.17.1",
+    "supertest": "^6.1.6"
   },
   "scripts": {
     "build": "run-s clean build:tsc",
     "build:tsc": "tsc -b",
-    "clean": "rimraf lib coverage tsconfig.tsbuildinfo"
+    "clean": "rimraf lib coverage tsconfig.tsbuildinfo",
+    "test:jest": "jest",
+    "test": "run-s build test:jest"
   },
   "dependencies": {
     "@detect-yabro/common": "^1.0.0"
