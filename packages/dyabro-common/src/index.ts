@@ -3,7 +3,7 @@ const Devices = {
     IPHONE: 'iPhone'.toLowerCase(),
     IPAD: 'iPad'.toLowerCase(),
     IPOD: 'iPod'.toLowerCase()
-}
+};
 
 export enum Platforms {
     WINDOWS = 'windows',
@@ -18,11 +18,11 @@ const Yabro = 'YaBrowser'.toLowerCase();
 
 const checkYabro = (userAgent: string): boolean => {
     return userAgent.includes(Yabro);
-}
+};
 
 const checkPlatform = (userAgent: string, platform: string): boolean => {
     return userAgent.includes(platform);
-}
+};
 
 const checkDevice = (userAgent: string, device: string | string[]): boolean => {
     if (Array.isArray(device)) {
@@ -30,60 +30,60 @@ const checkDevice = (userAgent: string, device: string | string[]): boolean => {
     }
 
     return userAgent.includes(device);
-}
+};
 
-const checkParams = (userAgent: string, {
-    platform,
-    device
-}: { platform?: string, device?: string | string[] }): boolean => {
+const checkParams = (
+    userAgent: string,
+    { platform, device }: { platform?: string; device?: string | string[] }
+): boolean => {
     const isSuitablePlatform = platform ? checkPlatform(userAgent, platform) : true;
     const isSuitableDevice = device ? checkDevice(userAgent, device) : true;
     const isYabro = checkYabro(userAgent);
 
     return isSuitableDevice && isSuitablePlatform && isYabro;
-}
+};
 
 export const isMobileYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, { device: Devices.MOBILE });
-}
+};
 export const isYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, {});
-}
+};
 export const isIOSYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, { device: [Devices.IPAD, Devices.IPHONE, Devices.IPOD] });
-}
+};
 export const isAndroidYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, { platform: Platforms.LINUX, device: Devices.MOBILE });
-}
+};
 export const isMacOSYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, { platform: Platforms.MAC_OS });
-}
+};
 export const isWindowsYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, { platform: Platforms.WINDOWS });
-}
+};
 export const isLinuxYabro = (userAgent: string): boolean => {
     const lowerAgent = `${userAgent}`.toLowerCase();
     return checkParams(lowerAgent, { platform: Platforms.LINUX }) && !isMobileYabro(lowerAgent);
-}
+};
 
 type YabroDetectionSummarized = {
     isYabro: boolean;
     isMobile: boolean;
     platform?: Platforms;
-}
+};
 
 export default (userAgent: string): YabroDetectionSummarized => {
     const lowerAgent = `${userAgent}`.toLowerCase();
 
     const result: YabroDetectionSummarized = {
         isYabro: isYabro(lowerAgent),
-        isMobile: isMobileYabro(lowerAgent),
+        isMobile: isMobileYabro(lowerAgent)
     };
     let platform: Platforms = Platforms.UNKNOWN;
 
@@ -107,4 +107,4 @@ export default (userAgent: string): YabroDetectionSummarized => {
         result.platform = platform;
     }
     return result;
-}
+};
