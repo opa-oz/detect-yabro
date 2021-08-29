@@ -1,6 +1,6 @@
 {
   "name": "@detect-yabro/server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Detect Yandex.Browser on server side",
   "main": "build/index.js",
   "repository": "https://github.com/opa-oz/detect-yabro",
@@ -24,7 +24,7 @@
     "test": "run-s build test:jest"
   },
   "dependencies": {
-    "@detect-yabro/common": "^1.1.0"
+    "@detect-yabro/common": "^1.1.1"
   },
   "gitHead": "a91d3918a29383f871680017ab566ab77cb6c9a9"
 }
