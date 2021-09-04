@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
-      "es6"
+      "es2016"
+    ],
+    "types": [
+      "node",
+      "jest"
     ],
     "module": "commonjs",
     "resolveJsonModule": true,
@@ -12,6 +16,6 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "outDir": "./lib",
+    "outDir": "./lib"
   }
 }

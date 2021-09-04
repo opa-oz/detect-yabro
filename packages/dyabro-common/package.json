@@ -20,5 +20,10 @@
     "test:jest": "jest",
     "test": "run-s clean build test:jest"
   },
-  "gitHead": "6706eddd46fe9e5ef4585a5017863e2662e4efb7"
+  "gitHead": "6706eddd46fe9e5ef4585a5017863e2662e4efb7",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "jest": "^27.1.0",
+    "ts-jest": "^27.0.5"
+  }
 }

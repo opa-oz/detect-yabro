@@ -1,6 +1,17 @@
-const dy = require('../lib');
+import dy, {
+    isAndroidYabro,
+    isIOSYabro,
+    isLinuxYabro,
+    isMacOSYabro,
+    isMobileYabro,
+    isWindowsYabro,
+    isYabro
+} from '../src/index';
 
-const requests = {
+type UserAgents = Array<string>;
+type Platform = { [item: string]: UserAgents };
+
+const requests: { [item: string]: Platform } = {
     WINDOWS: {
         YABRO: [
             'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 YaBrowser/21.8.0 Yowser/2.5 Safari/537.36',
@@ -96,7 +107,7 @@ describe('Detect Yabro common', () => {
                         }
                     }
 
-                    expect(dy.default(useragent)).toEqual({
+                    expect(dy(useragent)).toEqual({
                         isYabro: browserKey === 'YABRO',
                         isMobile: ['ANDROID', 'IPAD', 'IPHONE', 'IPOD'].includes(platformKey) && browserKey === 'YABRO',
                         platform
@@ -104,43 +115,41 @@ describe('Detect Yabro common', () => {
                 });
 
                 it(`[isYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isYabro(useragent)).toEqual(browserKey === 'YABRO');
+                    expect(isYabro(useragent)).toEqual(browserKey === 'YABRO');
                 });
 
                 it(`[isMobileYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isMobileYabro(useragent)).toEqual(
+                    expect(isMobileYabro(useragent)).toEqual(
                         ['ANDROID', 'IPAD', 'IPHONE', 'IPOD'].includes(platformKey) && browserKey === 'YABRO'
                     );
                 });
 
                 it(`[isIOSYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isIOSYabro(useragent)).toEqual(
+                    expect(isIOSYabro(useragent)).toEqual(
                         ['IPAD', 'IPHONE', 'IPOD'].includes(platformKey) && browserKey === 'YABRO'
                     );
                 });
 
                 it(`[isAndroidYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isAndroidYabro(useragent)).toEqual(
+                    expect(isAndroidYabro(useragent)).toEqual(
                         ['ANDROID'].includes(platformKey) && browserKey === 'YABRO'
                     );
                 });
 
                 it(`[isMacOSYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isMacOSYabro(useragent)).toEqual(
+                    expect(isMacOSYabro(useragent)).toEqual(
                         ['MACINTOSH'].includes(platformKey) && browserKey === 'YABRO'
                     );
                 });
 
                 it(`[isWindowsYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isWindowsYabro(useragent)).toEqual(
+                    expect(isWindowsYabro(useragent)).toEqual(
                         ['WINDOWS'].includes(platformKey) && browserKey === 'YABRO'
                     );
                 });
 
                 it(`[isLinuxYabro] - ${platformKey}/${browserKey}`, () => {
-                    expect(dy.isLinuxYabro(useragent)).toEqual(
-                        ['LINUX'].includes(platformKey) && browserKey === 'YABRO'
-                    );
+                    expect(isLinuxYabro(useragent)).toEqual(['LINUX'].includes(platformKey) && browserKey === 'YABRO');
                 });
             });
         });

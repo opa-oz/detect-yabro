@@ -2,16 +2,21 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.1",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "cz-lerna-changelog": "^2.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
+    "jest": "^27.1.0",
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.4.0"
   },
   "config": {
@@ -22,7 +27,7 @@
   "dependencies": {},
   "scripts": {
     "build": "lerna run build --npm-client=yarn",
-    "test": "lerna run test --npm-client=yarn",
+    "test": "jest",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna run --parallel clean",
     "release": "lerna publish",
