@@ -10,6 +10,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">4.0"
+  },
   "scripts": {
     "build": "run-s clean build:tsc",
     "build:tsc": "tsc -b",

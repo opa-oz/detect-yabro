@@ -2,6 +2,9 @@
 
 > Common library to detect Yandex.Browser.
 
+[![Latest Stable Version](https://img.shields.io/npm/v/@detect-yabro/common/latest.svg)](https://www.npmjs.com/package/@detect-yabro/common)
+[![@detect-yabro/common](https://snyk.io/advisor/npm-package/@detect-yabro/common/badge.svg)](https://snyk.io/advisor/npm-package/@detect-yabro/common)
+
 ## Install
 
 Using npm:
